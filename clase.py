@@ -2,15 +2,16 @@
 
 numero = input("Dime un numero: ")
 
-# Primero comprobamos si el número tiene un número par o impar de dígitos
-
-if len(numero) % 2 == 0:
-    # Es par
-    for valor in range(0, len(numero)):
-        if numero[valor] == numero[len(numero)-1]:
-            break
-    else:
-       print("El número no es un palíndromo")
+for valor in range(0, len(numero) // 2):
+    if numero[valor] != numero[len(numero)-valor-1]:
+        print("El número no es un palíndromo")
+        break
 else:
-    # Es impar
+    print("El número es un palíndromo")
 
+suma = 0
+
+for digito in numero:
+    suma += int(digito)
+
+print("Suma: " , suma)
