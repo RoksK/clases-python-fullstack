@@ -1,17 +1,18 @@
-# Comprobar si un numero entero es palindromo y devolver la suma de sus digitos
+# Tendremos una lista de usuarios
+# usuarios = ["joaquin", "ana", "maria", "pablo"]
+# Queremos un sistema que nos pida un usuario. Si el usuario ya existe
+# lo indica. Si no, se añade y se notifica (dando el total)
 
-numero = input("Dime un numero: ")
+usuarios = ["joaquin", "ana", "maria", "pablo"]
 
-for valor in range(0, len(numero) // 2):
-    if numero[valor] != numero[len(numero)-valor-1]:
-        print("El número no es un palíndromo")
-        break
-else:
-    print("El número es un palíndromo")
+usuario = input("Introduzca el nombre de usuario: ").lower()
 
-suma = 0
+while usuario != "stop":
+    if usuario not in usuarios:
+        usuarios.append(usuario)
+        print("Usuario añadido correctamente")
+    else:
+        print("El usuario ya existe")
+    usuario = input("Introduzca el nombre de usuario: ").lower()
 
-for digito in numero:
-    suma += int(digito)
-
-print("Suma: " , suma)
+print("Número de usuarios: ", len(usuarios))
