@@ -1,20 +1,16 @@
-# Crear una funcion formatear_nombre a la que le demos por posición el nombre, el apellido, 
-# y el apellido 2 de alguien, y que tenga dos args extra como clave valor, uno que sea upper 
-# (por defecto False) que ponga todo en mayúscula, y otro que sea añadir, y que añada un texto 
-# al final en una línea nueva (con "\n")
+# Hacer las siguientes lambdas:
+# tomar una lista de números y darme su suma
+# tomar un string y dármelo en mayúsculas y añadiendo un espacio y 
+# su tamaño al final (ejemplo "abc" deberia darme "ABC 3"
+# tomar un diccionario y devolverme una tupla, primero con una tupla de 
+# sus claves y después una tupla de sus valores
 
-# una vez hecho esto, quiero que lo hagamos con empaquetamiento, ya que habrá nombres con solo un apellido, 
-# o nombres con 2 nombres (y por tanto con 4 strings), es decir, habrá que usar empaquetamiento por posicion
+suma = lambda numeros: sum(numeros)
 
-def formatear_nombre(*nombre, upper = False, añadir=""):
-    nombre_completo = " ".join(nombre)
-    if upper:
-        nombre_completo = nombre_completo.upper()
-    if añadir:
-        nombre_completo += "\n" + añadir
-    return nombre_completo
+string = lambda texto: f"{texto.upper()} {len(texto)}"
 
+tupla = lambda diccionario: (tuple(diccionario.keys()), tuple(diccionario.values()))
 
-print(formatear_nombre("Ruth", "Salinas"))
-print(formatear_nombre("Ruth", "Salinas", upper=True))
-print(formatear_nombre("Ruth", "Salinas", "Benavides", añadir="Alumna"))
+print(suma([1, 2, 3]))
+print(string("abc"))
+print(tupla({"a": 1, "b": 2, "c": 3}))
